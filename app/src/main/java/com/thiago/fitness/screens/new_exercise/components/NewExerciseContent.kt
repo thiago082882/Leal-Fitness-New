@@ -6,7 +6,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.FitnessCenter
 import androidx.compose.material.icons.filled.List
 import androidx.compose.runtime.Composable
@@ -118,6 +117,45 @@ fun NewExerciseContent(viewModel: NewExerciseViewModel = hiltViewModel()) {
                 value = state.remarks,
                 onValueChange = { viewModel.onRemarksInput(it) },
                 label = "Observation",
+                icon = Icons.Default.List,
+                errorMsg = "",
+                validateField = {
+
+                }
+            )
+            DefaultTextField(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 0.dp, start = 20.dp, end = 20.dp),
+                value = state.sets.toString(),
+                onValueChange = { viewModel.onSetsInput(it.toIntOrNull() ?: 0) },
+                label = "Sets",
+                icon = Icons.Default.List,
+                errorMsg = "",
+                validateField = {
+
+                }
+            )
+            DefaultTextField(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 0.dp, start = 20.dp, end = 20.dp),
+                value = state.repetitions.toString(),
+                onValueChange = { viewModel.onRepetitionsInput(it.toIntOrNull() ?: 0) },
+                label = "Repetitions",
+                icon = Icons.Default.List,
+                errorMsg = "",
+                validateField = {
+
+                }
+            )
+            DefaultTextField(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 0.dp, start = 20.dp, end = 20.dp),
+                value = state.restTimeSeconds.toString(),
+                onValueChange = { viewModel.onRestTimeSecondsInput(it.toIntOrNull() ?: 0) },
+                label = "Rest Time (seconds)",
                 icon = Icons.Default.List,
                 errorMsg = "",
                 validateField = {

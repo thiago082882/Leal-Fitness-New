@@ -8,6 +8,9 @@ data class NewExerciseState(
  val name: String = "",
  val remarks: String = "",
  var image: String = "",
+ val sets: Int = 0,
+ val repetitions: Int = 0,
+ val restTimeSeconds: Int = 0
 
 
 

@@ -90,7 +90,11 @@ sealed class DetailsScreen(val route: String) {
     data object NewTraining : DetailsScreen("training/new")
 
 
-    data object NewExercise : DetailsScreen("training/exercise/new/{trainingId}")
+    //data object NewExercise : DetailsScreen("training/exercise/new/{trainingId}")
+
+    data object NewExercise : DetailsScreen("training/exercise/new/{trainingId}") {
+        fun createRoute(trainingId: String) = "training/exercise/new/$trainingId"
+    }
 
     data object ProfileUpdate : DetailsScreen("profile/update/{user}") {
         fun passUser(user: String) = "profile/update/$user"

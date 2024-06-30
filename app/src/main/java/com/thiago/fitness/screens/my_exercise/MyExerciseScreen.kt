@@ -32,15 +32,9 @@ fun MyExerciseScreen(navController: NavHostController, trainingId: String,viewMo
                 modifier = Modifier.padding(bottom = 50.dp),
                 onClick = {
 
-                  // navController.navigate(DetailsScreen.NewExercise.route)
-                  //val training= Training()
-                    navController.navigate("training/exercise/new/$trainingId")
-                    //navController.navigate("DetailsScreen.NewExercise.route/{$trainingId}")
 
-
-
-
-                    //  navController.navigate(DetailsScreen.NewExercise.passTrainingId(trainingId))
+                    //navController.navigate("training/exercise/new/$trainingId")
+                    navController.navigate(DetailsScreen.NewExercise.createRoute(trainingId))
 
                 }
             ) {

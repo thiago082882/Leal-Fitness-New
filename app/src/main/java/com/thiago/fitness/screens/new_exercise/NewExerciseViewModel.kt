@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.thiago.fitness.domain.model.Exercise
 import com.thiago.fitness.domain.model.Response
-import com.thiago.fitness.domain.model.Training
 import com.thiago.fitness.domain.use_cases.exercise.ExerciseUseCases
 import com.thiago.fitness.presentation.utils.ComposeFileProvider
 import com.thiago.fitness.presentation.utils.ResultingActivityHandler
@@ -43,6 +42,9 @@ class NewExerciseViewModel @Inject constructor(
             name = state.name,
             remarks = state.remarks,
             image = state.image,
+            sets = state.sets,
+            repetitions = state.repetitions,
+            restTimeSeconds = state.restTimeSeconds,
             trainingId =  trainingId
         )
         createExercise(exercise,file!!)
@@ -68,7 +70,7 @@ class NewExerciseViewModel @Inject constructor(
         state = state.copy(
             name = "",
             remarks = "",
-            image = "",
+            image = ""
 
         )
         createExerciseResponse = null
@@ -78,11 +80,23 @@ class NewExerciseViewModel @Inject constructor(
         state = state.copy(name = name)
     }
 
+
     fun onRemarksInput(remarks: String) {
         state = state.copy(remarks = remarks)
     }
 
     fun onImageInput(image: String) {
         state = state.copy(image = image)
+    }
+    fun onSetsInput(sets: Int) {
+        state = state.copy(sets = sets)
+    }
+
+    fun onRepetitionsInput(repetitions: Int) {
+        state = state.copy(repetitions = repetitions)
+    }
+
+    fun onRestTimeSecondsInput(restTimeSeconds: Int) {
+        state = state.copy(restTimeSeconds = restTimeSeconds)
     }
 }

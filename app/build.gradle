@@ -99,6 +99,9 @@ dependencies {
     //   FilenameUtils
     implementation "commons-io:commons-io:2.7"
 
+    implementation "androidx.compose.animation:animation:1.6.7"
+
+
 }
 kapt {
     correctErrorTypes = true

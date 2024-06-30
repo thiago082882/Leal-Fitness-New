@@ -58,7 +58,7 @@ fun DetailTrainingContent(
                 contentScale = ContentScale.Crop
             )
             IconButton(
-                onClick = { navController?.popBackStack() },
+                onClick = { navController.popBackStack() },
                 modifier = Modifier
                     .padding(16.dp)
                     .size(35.dp)
@@ -67,7 +67,7 @@ fun DetailTrainingContent(
                 Icon(
                     imageVector = Icons.Default.ArrowBack,
                     contentDescription = "",
-                    tint = DarkGray900,
+                    tint = Color.White,
 
                 )
             }
